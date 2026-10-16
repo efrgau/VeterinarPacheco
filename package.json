@@ -1,0 +1,41 @@
+{
+  "name": "veterinary-appointment-booking-app",
+  "private": true,
+  "scripts": {
+    "dev": "opennextjs-cloudflare dev",
+    "dev:next": "next dev",
+    "build": "opennextjs-cloudflare build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 execute DB --local --file=./migrations/0000_initial.sql",
+    "db:migrate:remote": "wrangler d1 execute DB --remote --file=./migrations/0000_initial.sql",
+    "db:seed:local": "curl -X POST http://localhost:8787/api/seed",
+    "db:seed:remote": "curl -X POST https://TU-DOMINIO/api/seed"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.7.1",
+    "drizzle-orm": "0.45.2",
+    "lucide-react": "^1.56.0",
+    "next": "16.4.2",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.17",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.2",
+    "postcss": "8.5.8",
+    "tailwindcss": "4.1.17",
+    "typescript": "5.9.3",
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developers.cloudflare.com/schemas/wrangler.jsonc",
+  "name": "veterinary-appointment-booking-app",
+  "compatibility_date": "2026-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vet-appointments-db",
+      "database_id": "61823a6a-4e33-468a-8ec5-1661fee2df6a",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
